@@ -10,7 +10,26 @@ function audioPlayer() {
         currentSong = $(this).parent().index();
         $(this).parent().addClass("current-song");
     });
+    $("#next").click(function (event) {
+        event.preventDefault();
+        currentSong++;
+        $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
+        $("#audioPlayer")[0].play();
+        $("#playlist li").removeClass("current-song");
+        currentSong = $(this).parent().index();
+        $(this).parent().addClass("current-song");
 
+    });
+    $("#previous").click(function (event) {
+        event.preventDefault();
+        currentSong--;
+        $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
+        $("#audioPlayer")[0].play();
+        $("#playlist li").removeClass("current-song");
+        currentSong = $(this).parent().index();
+        $(this).parent().addClass("current-song");
+
+    });
     $("#audioPlayer")[0].addEventListener("ended", function () {
         currentSong++;
         if (currentSong === $("#playlist li a").length)

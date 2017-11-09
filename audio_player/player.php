@@ -38,6 +38,13 @@
     }
     echo '</ul>';
 ?>
+
+<input type="button" id="previous" value="Previous Song">
+<input type="button" id="next" onclick="next()" value="Next Song">
+<input type="button" id="pause" onclick="pause()" value="Pause">
+<input type="button" id="play" onclick="plays()" value="Play">
+
+
 <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
 <script src="audioPlayer.js"></script>
 <script>
