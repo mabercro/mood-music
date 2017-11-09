@@ -13,10 +13,12 @@ function audioPlayer() {
     $("#next").click(function (event) {
         event.preventDefault();
         currentSong++;
+        if (currentSong === $("#playlist li a").length)
+            currentSong = 0;
         $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
         $("#audioPlayer")[0].play();
         $("#playlist li").removeClass("current-song");
-        currentSong = $(this).parent().index();
+        $("#playlist li:eq("+currentSong+")").addClass("current-song");
         $(this).parent().addClass("current-song");
 
     });
@@ -26,9 +28,15 @@ function audioPlayer() {
         $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
         $("#audioPlayer")[0].play();
         $("#playlist li").removeClass("current-song");
-        currentSong = $(this).parent().index();
+        $("#playlist li:eq("+currentSong+")").addClass("current-song");
         $(this).parent().addClass("current-song");
 
+    });
+    $("#pause").click(function (event){
+       $("#audioPlayer")[0].pause();
+    });
+    $("#play").click(function (event){
+        $("#audioPlayer")[0].play();
     });
     $("#audioPlayer")[0].addEventListener("ended", function () {
         currentSong++;
