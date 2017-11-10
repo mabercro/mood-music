@@ -30,7 +30,7 @@ function validateLogin(theForm) {
 */
 function validateCreateAccount(theForm){
 	//
-	var username  = theForm.username.value;
+	//var username  = theForm.username.value;
 	var email = theForm.email.value;
 	var password = theForm.password.value;
 	var confirm_password = theForm.confirm_password.value;
@@ -38,9 +38,11 @@ function validateCreateAccount(theForm){
 	var error = "";
 
 	//need to change this eventually
-	if (username === "demo"){
+/*	if (username === "demo"){
 		error += "The username you have entered already exists <br>";
-	}else if (password !== confirm_password) {
+	}else */
+
+	if (password !== confirm_password) {
 		error += "The passwords you have entered do not match <br>";
 	}
 
@@ -50,9 +52,9 @@ function validateCreateAccount(theForm){
 
 		//prompt error message
 		if ($(window).width() < 760) {
-			$("#creation-error-xs").html("<div class='col-xs-9'>" + error + "</div>");
+			$("#creation-error-xs").html(error );
 		} else {
-			$("#creation-error-lg").html("<div class='col-sm-8'>" + error + "</div>");
+			$("#creation-error-lg").html( error );
 		}
 
 		return false;
