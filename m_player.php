@@ -1,3 +1,6 @@
+<?php
+    require_once('dbInfo.php');
+?>
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
