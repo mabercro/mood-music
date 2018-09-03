@@ -1,5 +1,5 @@
 # MoodMusic
-CMSC434 Fall 2017 Final Project
+Music Playlist Website
 
 <strong>Team:</strong><ul>
 <li>Michael Abercrombie</li>
